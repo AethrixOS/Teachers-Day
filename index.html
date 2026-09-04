@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Happy Teachers' Day</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SPATIAL ENVIRONMENT
+    ====================================================== -->
+
+    <div class="space">
+
+        <div class="space-grid"></div>
+
+        <div class="light-source light-one"></div>
+        <div class="light-source light-two"></div>
+
+        <div
+            class="floating-particles"
+            id="particles"
+        ></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MUSIC
+    ====================================================== -->
+
+    <audio
+        id="backgroundMusic"
+        loop
+        preload="auto"
+    >
+        <source
+            src="assets/teachers-day.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <button
+        class="music-button"
+        id="musicButton"
+        type="button"
+        aria-label="Toggle music"
+        title="Toggle music"
+    >
+        <span id="musicIcon">♪</span>
+    </button>
+
+
+    <!-- =====================================================
+         MAIN SCENE
+    ====================================================== -->
+
+    <main class="scene">
+
+
+        <!-- =================================================
+             WELCOME
+        ================================================== -->
+
+        <section
+            class="screen welcome-screen"
+            id="welcomeScreen"
+        >
+
+            <div class="spatial-label label-top-left">
+                TEACHERS' DAY
+            </div>
+
+            <div class="spatial-label label-bottom-right">
+                01 / WELCOME
+            </div>
+
+
+            <!-- Left floating surface -->
+
+            <div
+                class="floating-card card-left"
+            >
+
+                <span class="card-index">
+                    01
+                </span>
+
+                <p>
+                    For the people
+                    who guide us.
+                </p>
+
+            </div>
+
+
+            <!-- Right floating surface -->
+
+            <div
+                class="floating-card card-right"
+            >
+
+                <span class="card-index">
+                    02
+                </span>
+
+                <p>
+                    Made with
+                    gratitude.
+                </p>
+
+            </div>
+
+
+            <!-- Main spatial surface -->
+
+            <div class="welcome-panel">
+
+                <div class="panel-line"></div>
+
+                <p class="eyebrow">
+                    A SMALL MESSAGE OF GRATITUDE
+                </p>
+
+                <h1>
+                    Happy
+                    <span>Teachers' Day</span>
+                </h1>
+
+                <p class="subtitle">
+                    A little something made with gratitude
+                    for the teachers who make our school
+                    a better place.
+                </p>
+
+                <button
+                    id="beginButton"
+                    class="primary-button"
+                    type="button"
+                >
+                    Enter
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NAME
+        ================================================== -->
+
+        <section
+            class="screen name-screen hidden"
+            id="nameScreen"
+        >
+
+            <div class="spatial-label label-top-left">
+                PERSONAL MESSAGE
+            </div>
+
+            <div class="spatial-label label-bottom-right">
+                02 / IDENTIFY
+            </div>
+
+
+            <div class="name-panel">
+
+                <p class="eyebrow">
+                    BEFORE WE BEGIN
+                </p>
+
+                <h2>
+                    What's your name?
+                </h2>
+
+                <p class="subtitle">
+                    Enter your name to reveal your
+                    Teachers' Day message.
+                </p>
+
+
+                <div class="name-input-area">
+
+                    <input
+                        type="text"
+                        id="teacherName"
+                        placeholder="Enter your name"
+                        autocomplete="off"
+                        maxlength="80"
+                    >
+
+                    <button
+                        id="continueButton"
+                        class="primary-button"
+                        type="button"
+                    >
+                        Continue
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+
+                <p
+                    id="errorMessage"
+                    class="error-message hidden"
+                >
+                    Please enter your name.
+                </p>
+
+            </div>
+
+
+            <div class="side-marker marker-one">
+                ENTER
+            </div>
+
+            <div class="side-marker marker-two">
+                DISCOVER
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOADING
+        ================================================== -->
+
+        <section
+            class="screen loading-screen hidden"
+            id="loadingScreen"
+        >
+
+            <div class="loading-space">
+
+                <div class="loading-orbit">
+
+                    <div
+                        class="orbit-ring ring-one"
+                    ></div>
+
+                    <div
+                        class="orbit-ring ring-two"
+                    ></div>
+
+                    <div
+                        class="orbit-ring ring-three"
+                    ></div>
+
+                    <div class="orbit-core"></div>
+
+                </div>
+
+
+                <p
+                    id="loadingText"
+                    class="loading-text"
+                >
+                    Preparing your message...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MESSAGE
+        ================================================== -->
+
+        <section
+            class="screen message-screen hidden"
+            id="messageScreen"
+        >
+
+            <div class="spatial-label label-top-left">
+                MESSAGE RECEIVED
+            </div>
+
+            <div class="spatial-label label-bottom-right">
+                03 / FOR YOU
+            </div>
+
+
+            <!-- Back spatial layer -->
+
+            <div
+                class="depth-panel depth-back"
+            ></div>
+
+
+            <!-- Middle spatial layer -->
+
+            <div
+                class="depth-panel depth-middle"
+            ></div>
+
+
+            <!-- Main spatial layer -->
+
+            <div class="message-surface">
+
+
+                <!-- Header -->
+
+                <div class="message-header">
+
+                    <div>
+
+                        <p
+                            class="eyebrow"
+                            id="messageEyebrow"
+                        >
+                            WITH GRATITUDE
+                        </p>
+
+                        <p
+                            class="message-kicker"
+                            id="messageKicker"
+                        >
+                            A MESSAGE FOR YOU
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="message-badge"
+                        id="messageBadge"
+                    >
+                        TEACHERS' DAY
+                    </div>
+
+                </div>
+
+
+                <!-- Visual -->
+
+                <div class="message-visual">
+
+                    <div
+                        class="visual-symbol"
+                        id="visualSymbol"
+                    >
+                        ✦
+                    </div>
+
+                    <div
+                        class="visual-orbit orbit-a"
+                    ></div>
+
+                    <div
+                        class="visual-orbit orbit-b"
+                    ></div>
+
+                </div>
+
+
+                <!-- Message -->
+
+                <div class="message-content">
+
+                    <h2 id="messageTitle">
+                        Happy Teachers’ Day
+                    </h2>
+
+                    <p
+                        id="messageText"
+                        class="message-text"
+                    >
+                        Thank you for everything you do.
+                    </p>
+
+                    <div
+                        id="messageSignature"
+                        class="message-signature"
+                    >
+                        With gratitude.
+                    </div>
+
+                </div>
+
+
+                <!-- Footer -->
+
+                <div class="message-footer">
+
+                    <button
+                        id="restartButton"
+                        class="secondary-button"
+                        type="button"
+                    >
+                        Return to beginning
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="message-marker marker-left">
+                THANK YOU
+            </div>
+
+            <div class="message-marker marker-right">
+                WITH GRATITUDE
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
